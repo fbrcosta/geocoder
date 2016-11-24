@@ -233,8 +233,20 @@ class Google(Base):
         return self.parse['postal_town'].get('long_name')
 
     @property
+    def parish(self):
+        return self.parse['administrative_area_level_3'].get('short_name')
+    
+    @property
+    def parish_long(self):
+        return self.parse['administrative_area_level_3'].get('long_name')
+    
+    @property
     def county(self):
         return self.parse['administrative_area_level_2'].get('short_name')
+    
+    @property
+    def county_long(self):
+        return self.parse['administrative_area_level_2'].get('long_name')
 
     @property
     def state(self):
